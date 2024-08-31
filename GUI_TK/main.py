@@ -3,7 +3,7 @@ from PIL import Image, ImageTk, ImageSequence
 import model3d_pages
 import stream_home_page
 import socket
-
+import subprocess
 
 def get_ip_address():
     try:
@@ -108,6 +108,10 @@ def button_click(event, element):
     elif element == model_icone:
         print("3dmodel click")
         model3d_pages.model3d_page_home(root)
+    elif element == bn_katana_icone:
+        print("bnkatana click")
+        subprocess.run(['python3', 'bnkatanagame/main.py'])
+
 
 def mostra_frame(frame_index):
     global gif_frames, gif_frames_r, scale_bool
@@ -158,6 +162,13 @@ model_icone = canvas.create_image(larghezza_schermo - 250 - 60, altezza_schermo 
 canvas.tag_bind(model_icone, "<Enter>", lambda event, element=model_center: scale_center(event, element))
 canvas.tag_bind(model_icone, "<Leave>", lambda event, element=model_center: descale_center(event, element))
 canvas.tag_bind(model_icone, "<Button-1>", lambda event, element=model_icone: button_click(event, element))
+
+bn_katana_center = canvas.create_image(250, altezza_schermo - 250 - sott_elem, image=center)
+bn_katana_icone = canvas.create_image(250, altezza_schermo - 250 - sott_elem, image=model)
+canvas.tag_bind(bn_katana_icone, "<Enter>", lambda event, element=bn_katana_center: scale_center(event, element))
+canvas.tag_bind(bn_katana_icone, "<Leave>", lambda event, element=bn_katana_center: descale_center(event, element))
+canvas.tag_bind(bn_katana_icone, "<Button-1>", lambda event, element=bn_katana_icone: button_click(event, element))
+
 
 gif_display = canvas.create_image(larghezza_schermo / 2, altezza_schermo / 2 - 35+sott_elem, image=gif_frames[0])
 canvas.tag_bind(gif_display, "<Enter>", lambda event: ai_scale_center(event))

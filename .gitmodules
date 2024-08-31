@@ -1,0 +1,3 @@
+[submodule "GUI_TK/bnkatanagame/body-nodes-host"]
+	path = GUI_TK/bnkatanagame/body-nodes-host
+	url = https://github.com/ManuDev9/body-nodes-host.git
