@@ -28,26 +28,26 @@ enable Bluetooth on your Linux machine or Raspberry.
 From:
 https://github.com/ManuDev9/body-nodes-host/blob/master/modules/pythonlib/bnbluetoothbodynodeshost.py
 
-# sudo apt-get update
-# sudo apt-get install libbluetooth-dev
-# sudo apt-get install python3-bluez
-# pip install pybluez
-# bluetoothctl show
-#              power on
-#              power off
-#              discoverable on
-#              pairable on
-#              pair
-#
-# rfkill list bluetooth
-# Name: Pixel A - Address: 13:95:2G:61:6P:C6
-#                 pair 13:95:2G:61:6P:A6
-#                 connect 13:95:2G:61:6P:C6
-#                 info 13:95:2G:61:6P:C6
-# UUID: Serial Port              (00001101-0000-1000-8000-00805f9b34fb)
-#
-# It is best to first run the mobile app, and then pair it to propertly discover the UUID Serial Port
-# otherwise it might be seen. NOTE: This happens ONlY the first time the Host pair to the Node
+ sudo apt-get update
+ sudo apt-get install libbluetooth-dev
+ sudo apt-get install python3-bluez
+ pip install pybluez
+ bluetoothctl show
+              power on
+              power off
+              discoverable on
+              pairable on
+              pair
+
+ rfkill list bluetooth
+ Name: Pixel A - Address: 13:95:2G:61:6P:C6
+                 pair 13:95:2G:61:6P:A6
+                 connect 13:95:2G:61:6P:C6
+                 info 13:95:2G:61:6P:C6
+ UUID: Serial Port              (00001101-0000-1000-8000-00805f9b34fb)
+
+It is best to first run the mobile app, and then pair it to propertly discover the UUID Serial Port
+otherwise it might be seen. NOTE: This happens ONlY the first time the Host pair to the Node
 
 
 Depending on which communication channel you choose for the Host, you need to have Nodes that make use of the same channel. You need a Wifi or Bluetooth
