@@ -119,9 +119,10 @@ class BnKatanaGameApp(ShowBase):
             self.start_q = None
             return Task.cont
 
-        [ wW, wX, wY, wZ ] = bndata.apply( orientation_vals  )
+        new_orientation_vals = orientation_vals.copy()
+        bndata.apply( new_orientation_vals )
 
-        orientation_q = Quat(wW, wX, wY, wZ)
+        orientation_q = Quat(new_orientation_vals[0], new_orientation_vals[1], new_orientation_vals[2], new_orientation_vals[3])
 
         if self.start_q == None:
             self.start_q = Quat()
